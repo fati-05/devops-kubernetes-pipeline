@@ -1,0 +1,25 @@
+image: docker:24.0.5
+
+services:
+  - docker:dind
+
+stages:
+  - build
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+
+build_backend:
+  stage: build
+  script:
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - docker build -t fatie36/backend:latest backend
+    - docker push fatie36/backend:latest
+
+build_frontend:
+  stage: build
+  script:
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - docker build -t fatie36/frontend:latest frontend
+    - docker push fatie36/frontend:latest
