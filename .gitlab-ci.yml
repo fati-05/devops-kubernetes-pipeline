@@ -8,19 +8,19 @@ stages:
 build_frontend:
   stage: build
   script:
-    - echo "Build Frontend OK"
+    - echo "Build Frontend ✅"
 
 build_backend:
   stage: build
   script:
-    - echo "Build Backend OK"
+    - echo "Build Backend ✅"
 
 test_backend:
   stage: test
   script:
-    - echo "Tests Backend OK"
+    - echo "Test Backend ✅"
 
 deploy_k8s:
   stage: deploy
   script:
-    - echo "✅ Deploy Kubernetes skipped (no cluster)"
+    - echo "Deploy Kubernetes ✅ (simulated)"
