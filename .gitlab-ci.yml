@@ -23,4 +23,4 @@ test_backend:
 deploy_k8s:
   stage: deploy
   script:
-    - echo "Deploy Kubernetes OK (simulated)"
+    - echo "✅ Deploy Kubernetes skipped (no cluster)"
