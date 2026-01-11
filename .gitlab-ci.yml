@@ -1,5 +1,6 @@
 image: alpine:latest
 
+
 stages:
   - build
   - test
@@ -24,3 +25,5 @@ deploy_k8s:
   stage: deploy
   script:
     - echo "Deploy Kubernetes OK (simulated)"
+
+    
